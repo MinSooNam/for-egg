@@ -1,0 +1,18 @@
+spring:
+  datasource:
+  # http://localhost:8080/h2-console/
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=MYSQL;DATABASE_TO_UPPER=false
+  h2.console:
+    enabled: true
+    settings.web-allow-others: true
+# JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+  jpa.properties.hibernate:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
+    dialect: org.hibernate.dialect.H2Dialect
+    show_sql: false
+    use_sql_comments: true
+    format_sql: true
+    hbm2ddl.auto: create
+    id.new_generator_mappings: true
